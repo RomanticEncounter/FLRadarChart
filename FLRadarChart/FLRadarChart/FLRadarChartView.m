@@ -7,8 +7,10 @@
 //
 
 #import "FLRadarChartView.h"
+//category
 #import "UIView+FLFrame.h"
 #import "NSString+FLTextSize.h"
+//model
 #import "FLRadarChartModel.h"
 
 //由角度转换弧度
@@ -55,6 +57,7 @@
 - (void)p_setupDefaultRadarChart {
     self.minValue = 0;
     self.maxValue = 100;
+    self.allowOverflow = YES;
     self.lineInterval = 20;
     //    self.backgroundColor = [UIColor whiteColor];
     self.radarChartLineWidth = 1;
@@ -65,20 +68,32 @@
     self.backgroundColor = [UIColor groupTableViewBackgroundColor];
 }
 
+
 #pragma mark - setter
 - (void)setClassifyDataArray:(NSArray<NSString *> *)classifyDataArray {
     _classifyDataArray = classifyDataArray;
     NSAssert(classifyDataArray.count >= 3, @"分类数据不能小于三组");
 }
 
-#pragma mark - layoutSubviews
+#pragma mark - Layer Display
 
-- (void)drawRect:(CGRect)rect {
-    [self fl_drawRadarChartBackgroundLine];
-    [self fl_drawRadarChartWithValue];
-    [self fl_drawRadarChartWithColorDescribe];
+- (void)drawLayer:(CALayer *)layer inContext:(CGContextRef)ctx {
+    if (self.classifyDataArray.count >= 3) {
+        if (!_backgroundLineLayer) {
+            [self fl_drawRadarChartBackgroundLine];
+        }
+    }
+    if (self.dataArray.count) {
+        if (!_valueLayer) {
+            [self fl_drawRadarChartWithValue];
+        }
+        if (!_colorDescribeLayer) {
+            [self fl_drawRadarChartWithColorDescribe];
+        }
+    }
 }
 
+#pragma mark - layoutSubviews
 - (void)layoutSubviews {
     [super layoutSubviews];
     //上下预留30的间距，做文字和颜色描述描述
@@ -91,12 +106,17 @@
 #pragma mark - methods
 
 - (void)fl_redrawRadarChart {
+    [_backgroundLineLayer removeFromSuperlayer];
+    _backgroundLineLayer = nil;
+    
     [_valueLayer removeFromSuperlayer];
     _valueLayer = nil;
+    
     [_colorDescribeLayer removeFromSuperlayer];
     _colorDescribeLayer = nil;
-    [self fl_drawRadarChartWithValue];
-    [self fl_drawRadarChartWithColorDescribe];
+    
+    //间接调用drawRect方法
+    [self.layer setNeedsDisplay];
 }
 
 
@@ -105,7 +125,7 @@
  绘制雷达图
  */
 - (void)fl_drawRadarChartWithValue {
-    for (FLRadarChartModel *dataModel in self.dataArray) {
+    for (FLRadarChartModel *dataModel in [NSArray arrayWithObject:self.dataArray[1]]) {
         CAShapeLayer *layer = [CAShapeLayer layer];
         layer.lineWidth = self.radarChartLineWidth;
         layer.strokeColor = dataModel.strokeColor.CGColor;
@@ -117,17 +137,19 @@
             NSNumber *value = dataModel.valueArray[i];
             CGFloat numeric = value.floatValue;
             
-            //判断当前值是否超过最大最小值
-            if (value.floatValue > self.maxValue) {
-                numeric = MIN(value.floatValue, self.maxValue);
-            } else if (value.floatValue < self.minValue) {
-                numeric = MAX(value.floatValue, self.minValue);
+            if (!self.allowOverflow) {
+                //判断当前值是否超过最大最小值
+                if (value.floatValue > self.maxValue) {
+                    numeric = MIN(value.floatValue, self.maxValue);
+                } else if (value.floatValue < self.minValue) {
+                    numeric = MAX(value.floatValue, self.minValue);
+                }
             }
             
             NSInteger subAngle = 360 / self.classifyDataArray.count;
             
             
-            //NSInteger index = [dataModel.valueArray indexOfObject:value];
+            //NSInteger index = [dataModel.values indexOfObject:value];
             
             NSInteger angle = i * subAngle;
             CGFloat radian = kDegreesToRadian(angle);
@@ -226,11 +248,13 @@
         }
     }
     //竖向直线
-    for (NSValue *boardValue in borderPointArray) {
-        CGPoint boardPoint = boardValue.CGPointValue;
-        [backgroundLinePath moveToPoint:boardPoint];
-        [backgroundLinePath addLineToPoint:self.chartCenter];
-    }
+    /*
+     for (NSValue *boardValue in borderPointArray) {
+     CGPoint boardPoint = boardValue.CGPointValue;
+     [backgroundLinePath moveToPoint:boardPoint];
+     [backgroundLinePath addLineToPoint:self.chartCenter];
+     }
+     */
     
     self.backgroundLineLayer.path = backgroundLinePath.CGPath;
     [self.layer addSublayer:self.backgroundLineLayer];
