@@ -17,6 +17,7 @@
 		0868FBA121C6A4F900685E4E /* FLRadarChartModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0868FBA021C6A4F900685E4E /* FLRadarChartModel.m */; };
 		0868FBA421C6A6B900685E4E /* UIView+FLFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 0868FBA221C6A6B800685E4E /* UIView+FLFrame.m */; };
 		0868FBA721C6A93500685E4E /* NSString+FLTextSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 0868FBA621C6A93500685E4E /* NSString+FLTextSize.m */; };
+		CEFD977B8F33C937AE154253 /* Pods_FLRadarChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40604871C1544B84E9FADDCF /* Pods_FLRadarChart.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,9 @@
 		0868FBA321C6A6B900685E4E /* UIView+FLFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FLFrame.h"; sourceTree = "<group>"; };
 		0868FBA521C6A93500685E4E /* NSString+FLTextSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+FLTextSize.h"; sourceTree = "<group>"; };
 		0868FBA621C6A93500685E4E /* NSString+FLTextSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+FLTextSize.m"; sourceTree = "<group>"; };
+		2F23C878303B889B150FEFAB /* Pods-FLRadarChart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLRadarChart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FLRadarChart/Pods-FLRadarChart.debug.xcconfig"; sourceTree = "<group>"; };
+		40604871C1544B84E9FADDCF /* Pods_FLRadarChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FLRadarChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2936643C97C0355C08028EA /* Pods-FLRadarChart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLRadarChart.release.xcconfig"; path = "Pods/Target Support Files/Pods-FLRadarChart/Pods-FLRadarChart.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEFD977B8F33C937AE154253 /* Pods_FLRadarChart.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +61,8 @@
 			children = (
 				0868FB8221C6A3E100685E4E /* FLRadarChart */,
 				0868FB8121C6A3E100685E4E /* Products */,
+				D579914802361E67443B99E0 /* Pods */,
+				C6462B3B963E96EBE256F13F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +114,23 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		C6462B3B963E96EBE256F13F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				40604871C1544B84E9FADDCF /* Pods_FLRadarChart.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D579914802361E67443B99E0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2F23C878303B889B150FEFAB /* Pods-FLRadarChart.debug.xcconfig */,
+				B2936643C97C0355C08028EA /* Pods-FLRadarChart.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -114,9 +138,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0868FB9621C6A3E200685E4E /* Build configuration list for PBXNativeTarget "FLRadarChart" */;
 			buildPhases = (
+				8D652D033D2C30266C15714F /* [CP] Check Pods Manifest.lock */,
 				0868FB7C21C6A3E100685E4E /* Sources */,
 				0868FB7D21C6A3E100685E4E /* Frameworks */,
 				0868FB7E21C6A3E100685E4E /* Resources */,
+				020139A9EDE6FD208FA63081 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -172,6 +198,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		020139A9EDE6FD208FA63081 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FLRadarChart/Pods-FLRadarChart-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FLRadarChart/Pods-FLRadarChart-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D652D033D2C30266C15714F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FLRadarChart-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0868FB7C21C6A3E100685E4E /* Sources */ = {
@@ -324,6 +397,7 @@
 		};
 		0868FB9721C6A3E200685E4E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F23C878303B889B150FEFAB /* Pods-FLRadarChart.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -341,6 +415,7 @@
 		};
 		0868FB9821C6A3E200685E4E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2936643C97C0355C08028EA /* Pods-FLRadarChart.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
