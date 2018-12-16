@@ -125,7 +125,7 @@
  绘制雷达图
  */
 - (void)fl_drawRadarChartWithValue {
-    for (FLRadarChartModel *dataModel in [NSArray arrayWithObject:self.dataArray[1]]) {
+    for (FLRadarChartModel *dataModel in self.dataArray) {
         CAShapeLayer *layer = [CAShapeLayer layer];
         layer.lineWidth = self.radarChartLineWidth;
         layer.strokeColor = dataModel.strokeColor.CGColor;
@@ -248,13 +248,13 @@
         }
     }
     //竖向直线
-    /*
+    
      for (NSValue *boardValue in borderPointArray) {
      CGPoint boardPoint = boardValue.CGPointValue;
      [backgroundLinePath moveToPoint:boardPoint];
      [backgroundLinePath addLineToPoint:self.chartCenter];
      }
-     */
+    
     
     self.backgroundLineLayer.path = backgroundLinePath.CGPath;
     [self.layer addSublayer:self.backgroundLineLayer];
@@ -295,7 +295,7 @@
                 textLayer = [self fl_getTextLayerWithString:text backgroundColor:[UIColor clearColor] frame:frame];
             }
         }
-        [self.layer addSublayer:textLayer];
+        [self.backgroundLineLayer addSublayer:textLayer];
     }
 }
 
