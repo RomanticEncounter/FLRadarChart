@@ -13,6 +13,10 @@
 		0868FB8D21C6A3E200685E4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0868FB8C21C6A3E200685E4E /* Assets.xcassets */; };
 		0868FB9021C6A3E200685E4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0868FB8E21C6A3E200685E4E /* LaunchScreen.storyboard */; };
 		0868FB9321C6A3E200685E4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0868FB9221C6A3E200685E4E /* main.m */; };
+		0868FB9E21C6A4A200685E4E /* FLRadarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0868FB9D21C6A4A200685E4E /* FLRadarChartView.m */; };
+		0868FBA121C6A4F900685E4E /* FLRadarChartModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0868FBA021C6A4F900685E4E /* FLRadarChartModel.m */; };
+		0868FBA421C6A6B900685E4E /* UIView+FLFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 0868FBA221C6A6B800685E4E /* UIView+FLFrame.m */; };
+		0868FBA721C6A93500685E4E /* NSString+FLTextSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 0868FBA621C6A93500685E4E /* NSString+FLTextSize.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,14 @@
 		0868FB8F21C6A3E200685E4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0868FB9121C6A3E200685E4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0868FB9221C6A3E200685E4E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0868FB9C21C6A4A200685E4E /* FLRadarChartView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLRadarChartView.h; sourceTree = "<group>"; };
+		0868FB9D21C6A4A200685E4E /* FLRadarChartView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLRadarChartView.m; sourceTree = "<group>"; };
+		0868FB9F21C6A4F900685E4E /* FLRadarChartModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLRadarChartModel.h; sourceTree = "<group>"; };
+		0868FBA021C6A4F900685E4E /* FLRadarChartModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLRadarChartModel.m; sourceTree = "<group>"; };
+		0868FBA221C6A6B800685E4E /* UIView+FLFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FLFrame.m"; sourceTree = "<group>"; };
+		0868FBA321C6A6B900685E4E /* UIView+FLFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FLFrame.h"; sourceTree = "<group>"; };
+		0868FBA521C6A93500685E4E /* NSString+FLTextSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+FLTextSize.h"; sourceTree = "<group>"; };
+		0868FBA621C6A93500685E4E /* NSString+FLTextSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+FLTextSize.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,8 @@
 		0868FB8221C6A3E100685E4E /* FLRadarChart */ = {
 			isa = PBXGroup;
 			children = (
+				0868FBA821C6A93E00685E4E /* Category */,
+				0868FB9921C6A43A00685E4E /* FLRadarChart */,
 				0868FB8321C6A3E100685E4E /* AppDelegate.h */,
 				0868FB8421C6A3E100685E4E /* AppDelegate.m */,
 				0868FB8621C6A3E100685E4E /* ViewController.h */,
@@ -69,6 +83,28 @@
 				0868FB9221C6A3E200685E4E /* main.m */,
 			);
 			path = FLRadarChart;
+			sourceTree = "<group>";
+		};
+		0868FB9921C6A43A00685E4E /* FLRadarChart */ = {
+			isa = PBXGroup;
+			children = (
+				0868FB9C21C6A4A200685E4E /* FLRadarChartView.h */,
+				0868FB9D21C6A4A200685E4E /* FLRadarChartView.m */,
+				0868FB9F21C6A4F900685E4E /* FLRadarChartModel.h */,
+				0868FBA021C6A4F900685E4E /* FLRadarChartModel.m */,
+			);
+			path = FLRadarChart;
+			sourceTree = "<group>";
+		};
+		0868FBA821C6A93E00685E4E /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				0868FBA321C6A6B900685E4E /* UIView+FLFrame.h */,
+				0868FBA221C6A6B800685E4E /* UIView+FLFrame.m */,
+				0868FBA521C6A93500685E4E /* NSString+FLTextSize.h */,
+				0868FBA621C6A93500685E4E /* NSString+FLTextSize.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,6 +133,7 @@
 		0868FB7821C6A3E100685E4E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = FL;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = FJL;
 				TargetAttributes = {
@@ -141,9 +178,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0868FBA721C6A93500685E4E /* NSString+FLTextSize.m in Sources */,
+				0868FBA421C6A6B900685E4E /* UIView+FLFrame.m in Sources */,
 				0868FB8821C6A3E100685E4E /* ViewController.m in Sources */,
 				0868FB9321C6A3E200685E4E /* main.m in Sources */,
+				0868FB9E21C6A4A200685E4E /* FLRadarChartView.m in Sources */,
 				0868FB8521C6A3E100685E4E /* AppDelegate.m in Sources */,
+				0868FBA121C6A4F900685E4E /* FLRadarChartModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
