@@ -2,15 +2,14 @@
 ## 雷达图
 > 用`UIBezierPath` + `CAShaperLayer`绘制，先给展示一张最终的效果图，然后咱们慢慢来说思路
 
-<img src="https://upload-images.jianshu.io/upload_images/2871024-3a806bdafbd5ddc5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="zoom:50%">
-<!--![雷达图最终效果](https://upload-images.jianshu.io/upload_images/2871024-3a806bdafbd5ddc5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)-->
+![雷达图最终效果](https://upload-images.jianshu.io/upload_images/2871024-3a806bdafbd5ddc5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 #### 步骤 + 思路
 1. 绘制背景（蜘蛛网效果）和 分类属性名的绘制
 
 外层的多边形：把雷达图看成一个圆形，最外层的点都是在圆上的，这样我们就可以在圆上找多个点，然后连接在一起，去绘制了。
-<img src="http://upload-images.jianshu.io/upload_images/2871024-f6cb963b45243668.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="zoom:50%">
-<!--![圆形的路径](http://upload-images.jianshu.io/upload_images/2871024-f6cb963b45243668.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)-->
+
+![圆形的路径](http://upload-images.jianshu.io/upload_images/2871024-f6cb963b45243668.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 首先创建一个`RadarChartView`，开始着手，最外层边框线的绘制，先要根据分类的数据才能确定圆上有几个点。
 ```objective-c
@@ -61,9 +60,9 @@
     [self fl_drawRadarChartBorderLine];
 }
 ```
-<img src="https://upload-images.jianshu.io/upload_images/2871024-eec0ec8428f90e52.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" style="zoom:50%">
-<!--![边框线条绘制效果](https://upload-images.jianshu.io/upload_images/2871024-eec0ec8428f90e52.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
--->
+
+![边框线条绘制效果](https://upload-images.jianshu.io/upload_images/2871024-eec0ec8428f90e52.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 雷达图的雏形就已经绘制好了，现在开始绘制每一层的线条
 ```objective-c
 - (void)fl_drawRadarChartBorderBackgroundLine {
