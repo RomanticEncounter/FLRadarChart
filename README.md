@@ -2,13 +2,13 @@
 ## 雷达图
 > 用`UIBezierPath` + `CAShaperLayer`绘制，先给展示一张最终的效果图，然后咱们慢慢来说思路
 
-![雷达图最终效果](https://upload-images.jianshu.io/upload_images/2871024-3a806bdafbd5ddc5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/620)
+![雷达图最终效果](https://upload-images.jianshu.io/upload_images/2871024-3a806bdafbd5ddc5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 #### 步骤 + 思路
 1. 绘制背景（蜘蛛网效果）和 分类属性名的绘制
 
 外层的多边形：把雷达图看成一个圆形，最外层的点都是在圆上的，这样我们就可以在圆上找多个点，然后连接在一起，去绘制了。
-![圆形的路径](http://upload-images.jianshu.io/upload_images/2871024-f6cb963b45243668.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/620)
+![圆形的路径](http://upload-images.jianshu.io/upload_images/2871024-f6cb963b45243668.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 首先创建一个`RadarChartView`，开始着手，最外层边框线的绘制，先要根据分类的数据才能确定圆上有几个点。
 ```objective-c
@@ -59,7 +59,7 @@
     [self fl_drawRadarChartBorderLine];
 }
 ```
-![边框线条绘制效果](https://upload-images.jianshu.io/upload_images/2871024-eec0ec8428f90e52.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/620)
+![边框线条绘制效果](https://upload-images.jianshu.io/upload_images/2871024-eec0ec8428f90e52.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 雷达图的雏形就已经绘制好了，现在开始绘制每一层的线条
 ```objective-c
@@ -131,7 +131,7 @@
     [self.layer addSublayer:layer];
 }
 ```
-![蜘蛛网图绘制效果](https://upload-images.jianshu.io/upload_images/2871024-5dfca94da9bd875b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/620)
+![蜘蛛网图绘制效果](https://upload-images.jianshu.io/upload_images/2871024-5dfca94da9bd875b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 绘制完成后，开始着手分类属性名称的绘制，这里可以使用`UILabel`或`CATextLayer`，`UILabel`就不用讲太多了，既然是图表，还是选择`CATextLayer`。
 
 最外层的坐标点数组，这里就还可以用来计算每个分类属性文字的位置。计算文字的大小可以用系统的
@@ -143,7 +143,7 @@
 - (CGRect)boundingRectWithSize:(CGSize)size options:(NSStringDrawingOptions)options context:(nullable NSStringDrawingContext *)context NS_AVAILABLE(10_11, 6_0);
 ```
 接下来绘制雷达图分类属性文字，根据边框上的点来计算，文本应该显示的位置，下面的代码，进行了封装，和上面无异
-![根据中心点的位计算文本位置](https://upload-images.jianshu.io/upload_images/2871024-36dd920af5ecf4be.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/620)
+![根据中心点的位计算文本位置](https://upload-images.jianshu.io/upload_images/2871024-36dd920af5ecf4be.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ```objective-c
 /**
@@ -220,7 +220,7 @@
     return textLayer;
 }
 ```
-![雷达图底层绘制效果](https://upload-images.jianshu.io/upload_images/2871024-d32a8faa44dd4d71.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/620)
+![雷达图底层绘制效果](https://upload-images.jianshu.io/upload_images/2871024-d32a8faa44dd4d71.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 2. 根据数据绘制数据图层
 数据无非就是0-100、0-1或是100-1000等之间的数值，并不确定，反观雷达图中心点肯定就是最小值，边框就是最大值，所以我们需要确定图表中的`minValue`和`maxValue`，每个图层都有它的名称，线条颜色，填充颜色和数值，数值的数量基本是和分类属性数量是一致的，所以我们写了个`FLRadarChartModel`，定义了以下四个个属性。
@@ -362,6 +362,6 @@ self.dataArray = @[model_1, model_2, model_3];
 }
 ```
 最终效果如图
-![最终效果图](https://upload-images.jianshu.io/upload_images/2871024-c8647e943cc76ff9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/620)
+![最终效果图](https://upload-images.jianshu.io/upload_images/2871024-c8647e943cc76ff9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 雷达图的显示基本上绘制完成了。希望能对大家有用。
