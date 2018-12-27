@@ -47,6 +47,13 @@
 
 @implementation FLRadarChartView
 
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        [self p_setupDefaultRadarChart];
+    }
+    return self;
+}
+
 - (instancetype)init {
     if (self = [super init]) {
         [self p_setupDefaultRadarChart];

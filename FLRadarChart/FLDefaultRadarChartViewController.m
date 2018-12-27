@@ -102,12 +102,15 @@
 
 - (void)allowOverflowSwitchAction:(UISwitch *)allowSwitch {
     self.radarChartView.allowOverflow = allowSwitch.isOn;
-    [self test_changeData];
+    [self.radarChartView fl_redrawRadarChart];
 }
 
 - (void)colorFillSwitchAction:(UISwitch *)fillSwitch {
     self.alphaSlider.enabled = fillSwitch.on;
-    [self test_changeData];
+    [self.radarChartView.dataArray enumerateObjectsUsingBlock:^(FLRadarChartModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        obj.fillColor = self.colorFillSwitch.isOn ? [obj.strokeColor colorWithAlphaComponent:self.alphaSlider.value] : [UIColor clearColor];
+    }];
+    [self.radarChartView fl_redrawRadarChart];
 }
 
 - (void)alphaSliderAction:(UISlider *)slider {
