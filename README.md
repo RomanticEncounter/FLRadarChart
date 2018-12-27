@@ -3,11 +3,11 @@
 > 使用`UIBezierPath` + `CAShaperLayer`绘制
 
 
-#### 如何使用
+## 如何使用
 
-##### 创建
+### 创建
 
-```objective-c
+```objc
 FLRadarChartView *radarChartView = [[FLRadarChartView alloc] initWithFrame:CGRectMake(0, 80, CGRectGetWidth(self.view.frame), CGRectGetWidth(self.view.frame))];
 radarChartView.backgroundColor = [UIColor groupTableViewBackgroundColor];
 radarChartView.minValue = 0.0;
@@ -16,9 +16,9 @@ radarChartView.allowOverflow = YES;
 [self.view addSubview:radarChartView];
 
 ```
-##### 传入数据源
+### 传入数据源
 
-```
+```objc
 FLRadarChartModel *model_1 = [[FLRadarChartModel alloc]init];
 model_1.name = @"能力1";
 model_1.valueArray = @[@10, @20, @30, @40, @50, @60];
