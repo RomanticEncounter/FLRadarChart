@@ -347,6 +347,10 @@
     return _colorDescribeLayer;
 }
 
+- (void)dealloc {
+    NSLog(@"%@ has been released",self.class);
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

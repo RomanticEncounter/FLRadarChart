@@ -17,6 +17,7 @@
 		0868FBA121C6A4F900685E4E /* FLRadarChartModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0868FBA021C6A4F900685E4E /* FLRadarChartModel.m */; };
 		0868FBA421C6A6B900685E4E /* UIView+FLFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 0868FBA221C6A6B800685E4E /* UIView+FLFrame.m */; };
 		0868FBA721C6A93500685E4E /* NSString+FLTextSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 0868FBA621C6A93500685E4E /* NSString+FLTextSize.m */; };
+		9E74502A21D47A55005A4B23 /* FLDefaultRadarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E74502921D47A55005A4B23 /* FLDefaultRadarChartViewController.m */; };
 		CEFD977B8F33C937AE154253 /* Pods_FLRadarChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40604871C1544B84E9FADDCF /* Pods_FLRadarChart.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,8 @@
 		0868FBA621C6A93500685E4E /* NSString+FLTextSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+FLTextSize.m"; sourceTree = "<group>"; };
 		2F23C878303B889B150FEFAB /* Pods-FLRadarChart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLRadarChart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FLRadarChart/Pods-FLRadarChart.debug.xcconfig"; sourceTree = "<group>"; };
 		40604871C1544B84E9FADDCF /* Pods_FLRadarChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FLRadarChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E74502821D47A55005A4B23 /* FLDefaultRadarChartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLDefaultRadarChartViewController.h; sourceTree = "<group>"; };
+		9E74502921D47A55005A4B23 /* FLDefaultRadarChartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLDefaultRadarChartViewController.m; sourceTree = "<group>"; };
 		B2936643C97C0355C08028EA /* Pods-FLRadarChart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLRadarChart.release.xcconfig"; path = "Pods/Target Support Files/Pods-FLRadarChart/Pods-FLRadarChart.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +86,8 @@
 				0868FB8421C6A3E100685E4E /* AppDelegate.m */,
 				0868FB8621C6A3E100685E4E /* ViewController.h */,
 				0868FB8721C6A3E100685E4E /* ViewController.m */,
+				9E74502821D47A55005A4B23 /* FLDefaultRadarChartViewController.h */,
+				9E74502921D47A55005A4B23 /* FLDefaultRadarChartViewController.m */,
 				0868FB8921C6A3E100685E4E /* Main.storyboard */,
 				0868FB8C21C6A3E200685E4E /* Assets.xcassets */,
 				0868FB8E21C6A3E200685E4E /* LaunchScreen.storyboard */,
@@ -251,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E74502A21D47A55005A4B23 /* FLDefaultRadarChartViewController.m in Sources */,
 				0868FBA721C6A93500685E4E /* NSString+FLTextSize.m in Sources */,
 				0868FBA421C6A6B900685E4E /* UIView+FLFrame.m in Sources */,
 				0868FB8821C6A3E100685E4E /* ViewController.m in Sources */,
