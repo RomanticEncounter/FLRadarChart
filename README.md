@@ -1,6 +1,6 @@
 # FLRadarChart
 ## 雷达图
-> 用`UIBezierPath` + `CAShaperLayer`绘制
+> 使用`UIBezierPath` + `CAShaperLayer`绘制
 
 
 #### 如何使用
