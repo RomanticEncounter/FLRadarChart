@@ -4,6 +4,8 @@
 
 [学习如何一步步的绘制Radar Chart](https://www.jianshu.com/p/1f5c4e13cd5e)
 
+![雷达图最终效果](https://upload-images.jianshu.io/upload_images/2871024-3a806bdafbd5ddc5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/540)
+
 
 ## 如何使用
 
